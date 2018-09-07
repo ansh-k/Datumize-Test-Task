@@ -1,7 +1,8 @@
-import { SET_USERS } from '../actions';
+import { SET_CURRENT_USER, SET_USERS } from '../actions';
 
 const initialState = {
   users: [],
+  currentUser: {},
 };
 
 const user = (state = initialState, action) => {
@@ -11,6 +12,12 @@ const user = (state = initialState, action) => {
         ...state,
         users: action.item,
       };
+    }
+    case SET_CURRENT_USER: {
+      return {
+        ...state,
+        currentUser: action.item,
+      }
     }
     default: return state;
   }
