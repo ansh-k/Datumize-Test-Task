@@ -1,0 +1,72 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "assignedProjects": [
+        {
+          "id": 1,
+          "name": "Trip to space",
+          "role": {
+            "id": 1,
+            "name": "Admin"
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Alice",
+      "assignedProjects": [
+        {
+          "id": 2,
+          "name": "Assembly Ikea furniture",
+          "role": {
+            "id": 2,
+            "name": "Editor"
+          }
+        },
+        {
+          "id": 3,
+          "name": "Datumize Zentral",
+          "role": {
+            "id": 3,
+            "name": "Viewer"
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Bob"
+    }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "name": "Trip to space"
+    },
+    {
+      "id": 2,
+      "name": "Assembly Ikea furniture"
+    },
+    {
+      "id": 3,
+      "name": "Datumize Zentral"
+    }
+  ],
+  "roles": [
+    {
+      "id": 1,
+      "name": "Admin"
+    },
+    {
+      "id": 2,
+      "name": "Editor"
+    },
+    {
+      "id": 3,
+      "name": "Viewer"
+    }
+  ]
+}
