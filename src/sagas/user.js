@@ -4,6 +4,7 @@ import {
   REQUEST_CURRENT_USER,
   SET_CURRENT_USER,
   SET_USERS,
+  ASSIGN_PROJECT,
 } from '../actions';
 
 function* watchRequestUsers () {
@@ -28,7 +29,25 @@ function* watchRequestSingleUser () {
   }
 }
 
+function* watchAssignProductToUser () {
+  while (1) {
+    const { item } = yield take(ASSIGN_PROJECT);
+    const response = yield fetch(`http://localhost:3000/users/${item.id}`, 
+      { method: 'PUT', 
+        body: JSON.stringify({ id: item.id, name: item.user.name, assignedProjects: item.user.assignedProjects }),
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        }
+
+      });
+    const user = yield response.json();
+    yield put({ type: SET_CURRENT_USER, item: user });
+  }
+}
+
 export default [
   fork(watchRequestUsers),
   fork(watchRequestSingleUser),
+  fork(watchAssignProductToUser),
 ];

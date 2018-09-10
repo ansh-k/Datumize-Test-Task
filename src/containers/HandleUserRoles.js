@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import HandleUserRoles from '../components/HandleUserRoles/';
-import { requestData, requestCurrentUser, setCurrentUser } from '../actions';
+import { requestData, requestCurrentUser, setCurrentUser, assignProject } from '../actions';
 
 const mapStateToProps = state => ({
   projects: state.project.projects,
@@ -12,6 +12,7 @@ const mapDispatchToProps = {
   requestData,
   requestCurrentUser,
   setCurrentUser,
+  assignProject,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(HandleUserRoles);
